@@ -50,11 +50,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function hotel_booking() {
-        return $this->hasOne(HotelBooking::class, 'user_id');
+    public function hotelBookings() {
+        return $this->hasMany(HotelBooking::class, 'user_id');
     }
 
-    public function tour_booking() {
-        return $this->hasOne(TourBooking::class, 'user_id');
+    public function tourBookings() {
+        return $this->hasMany(TourBooking::class, 'user_id');
     }
 }

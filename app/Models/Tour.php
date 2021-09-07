@@ -15,16 +15,16 @@ class Tour extends Model
         'name','slug','duration','image_seo','price', 'address', 'overview', 'active'
     ];
 
-    public function tour_booking()
+    public function tourBookings()
     {
         return $this->hasMany(TourBooking::class, 'tour_id');
     }
 
-    public function category() {
+    public function categories() {
         return $this->belongsToMany(Category::class, 'category_tour', 'tour_id', 'category_id');
     }
 
-    public function itinerary() {
+    public function itineraries() {
         return $this->hasMany(Itinerary::class, 'tour_id');
     }
 

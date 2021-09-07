@@ -15,7 +15,7 @@ class Destination extends Model
         'name','image','address','slug'
     ];
 
-    public function tour() {
+    public function tours() {
         return $this->hasMany(Tour::class, 'destination_id');
     }
 }

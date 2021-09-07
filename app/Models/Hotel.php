@@ -15,15 +15,15 @@ class Hotel extends Model
         'name','description','address','rating','city', 'zip', 'latitude', 'longitude'
     ];
 
-    public function room() {
+    public function rooms() {
         return $this->hasMany(Room::class, 'hotel_id');
     }
 
-    public function hotel_booking() {
+    public function hotelBookings() {
         return $this->hasMany(HotelBooking::class, 'hotel_id');
     }
 
-    public function amenity() {
+    public function amenities() {
         return $this->belongsToMany(Amenity::class, 'amenity_hotel', 'hotel_id', 'amenity_id');
     }
 

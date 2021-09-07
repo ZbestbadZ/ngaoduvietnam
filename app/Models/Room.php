@@ -19,11 +19,11 @@ class Room extends Model
         return $this->belongsTo(Hotel::class, 'hotel_id');
     }
 
-    public function facility() {
+    public function facilities() {
         return $this->belongsToMany(Facility::class, 'facility_room', 'facility_id', 'room_id');
     }
 
-    public function hotel_booking() {
+    public function hotelBookings() {
         return $this->belongsToMany(HotelBooking::class, 'hotel_booking_room', 'hotel_booking_id','room_id');
     }
 

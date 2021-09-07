@@ -12,15 +12,23 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = "users";
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'contact_name',
+        'country',
+        'phone',
+        'address',
+        'bank_account',
+        'avatar'
     ];
 
     /**
@@ -41,4 +49,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function hotel_booking() {
+        return $this->hasOne(HotelBooking::class, 'user_id');
+    }
+
+    public function tour_booking() {
+        return $this->hasOne(TourBooking::class, 'user_id');
+    }
 }

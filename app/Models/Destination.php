@@ -12,10 +12,11 @@ class Destination extends Model
     protected $table = "destinations";
 
     protected $fillable = [
-        'name','image','address','slug'
+        'name', 'image', 'address', 'slug'
     ];
 
-    public function tours() {
+    public function tours()
+    {
         return $this->hasMany(Tour::class, 'destination_id');
     }
 }

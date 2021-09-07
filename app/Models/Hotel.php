@@ -12,18 +12,21 @@ class Hotel extends Model
     protected $table = "hotels";
 
     protected $fillable = [
-        'name','description','address','rating','city', 'zip', 'latitude', 'longitude'
+        'name', 'description', 'address', 'rating', 'city', 'zip', 'latitude', 'longitude'
     ];
 
-    public function rooms() {
+    public function rooms()
+    {
         return $this->hasMany(Room::class, 'hotel_id');
     }
 
-    public function hotelBookings() {
+    public function hotelBookings()
+    {
         return $this->hasMany(HotelBooking::class, 'hotel_id');
     }
 
-    public function amenities() {
+    public function amenities()
+    {
         return $this->belongsToMany(Amenity::class, 'amenity_hotel', 'hotel_id', 'amenity_id');
     }
 

@@ -12,7 +12,7 @@ class Tour extends Model
     protected $table = "tours";
 
     protected $fillable = [
-        'name','slug','duration','image_seo','price', 'address', 'overview', 'active'
+        'name', 'slug', 'duration', 'image_seo', 'price', 'address', 'overview', 'active'
     ];
 
     public function tourBookings()
@@ -20,15 +20,18 @@ class Tour extends Model
         return $this->hasMany(TourBooking::class, 'tour_id');
     }
 
-    public function categories() {
+    public function categories()
+    {
         return $this->belongsToMany(Category::class, 'category_tour', 'tour_id', 'category_id');
     }
 
-    public function itineraries() {
+    public function itineraries()
+    {
         return $this->hasMany(Itinerary::class, 'tour_id');
     }
 
-    public function destination() {
+    public function destination()
+    {
         return $this->belongsTo(Destination::class, 'destination_id');
     }
 

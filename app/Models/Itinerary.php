@@ -12,10 +12,11 @@ class Itinerary extends Model
     protected $table = "itineraries";
 
     protected $fillable = [
-        'title','description','location'
+        'title', 'description', 'location'
     ];
 
-    public function tour() {
+    public function tour()
+    {
         return $this->belongsTo(Tour::class, 'tour_id');
     }
 }

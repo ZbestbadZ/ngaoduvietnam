@@ -12,10 +12,11 @@ class Amenity extends Model
     protected $table = "amenities";
 
     protected $fillable = [
-        'name','price'
+        'name', 'price'
     ];
 
-    public function hotels() {
+    public function hotels()
+    {
         return $this->belongsToMany(Hotel::class, 'amenity_hotel', 'hotel_id', 'amenity_id');
     }
 }

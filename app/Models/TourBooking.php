@@ -12,7 +12,7 @@ class TourBooking extends Model
     protected $table = "tour_bookings";
 
     protected $fillable = [
-        'start_date','end_date','primary_price','total_price','adult', 'children', 'payment_method'
+        'start_date', 'end_date', 'primary_price', 'total_price', 'adult', 'children', 'payment_method'
     ];
 
     public function user()
@@ -24,6 +24,4 @@ class TourBooking extends Model
     {
         return $this->belongsTo(Tour::class, 'tour_id');
     }
-
-
 }

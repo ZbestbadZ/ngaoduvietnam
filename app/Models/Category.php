@@ -12,10 +12,11 @@ class Category extends Model
     protected $table = "categories";
 
     protected $fillable = [
-        'name','image'
+        'name', 'image'
     ];
 
-    public function tours() {
+    public function tours()
+    {
         return $this->belongsToMany(Tour::class, 'category_tour', 'tour_id', 'category_id');
     }
 }

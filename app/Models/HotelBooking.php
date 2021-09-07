@@ -12,7 +12,7 @@ class HotelBooking extends Model
     protected $table = "hotel_bookings";
 
     protected $fillable = [
-        'checkin','checkout','total_price','amount'
+        'checkin', 'checkout', 'total_price', 'amount'
     ];
 
     public function user()
@@ -20,11 +20,13 @@ class HotelBooking extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function hotel() {
+    public function hotel()
+    {
         return $this->belongsTo(Hotel::class, 'hotel_id');
     }
 
-    public function rooms() {
-        return $this->belongsToMany(Room::class, 'hotel_booking_room', 'hotel_booking_id','room_id');
+    public function rooms()
+    {
+        return $this->belongsToMany(Room::class, 'hotel_booking_room', 'hotel_booking_id', 'room_id');
     }
 }

@@ -12,7 +12,7 @@ class Review extends Model
     protected $table = "reviews";
 
     protected $fillable = [
-        'reviewable_id','reviewable_type','title','rate','description'
+        'reviewable_id', 'reviewable_type', 'title', 'rate', 'description'
     ];
 
     public function reviewable()

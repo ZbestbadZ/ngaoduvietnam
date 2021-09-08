@@ -57,7 +57,7 @@
                             </div>
                             <form class="form-horizontal m-t-20" id="loginform" action="{{ route('login.check') }}"
                                 method="POST">
-                                {!! csrf_field() !!}
+                                @csrf
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i

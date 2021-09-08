@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
-use App\Models\Admin;
+use Session;
+use Exception;
 
 class AdminAuthController extends Controller
 {
@@ -26,20 +26,18 @@ class AdminAuthController extends Controller
         return view('admin.login');
     }
 
-    public function postLogin(LoginRequest $request)
+    public function loginCheck(LoginRequest $request)
     {
-        $credentials = $request->only('email', 'password');
-        if (auth()->guard('admin')->Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                        ->withSuccess('Signed in');
+        if ($this->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+            return view('admin.dashboard');
+        } else {
+            return back()->with('error', 'your username and password are wrong.');
         }
-
-        return redirect("login")->withSuccess('Login details are not valid');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
-        return redirect(route('adminLogin'));
+        return redirect()->route('adminLogin');
     }
 }

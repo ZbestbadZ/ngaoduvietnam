@@ -20,9 +20,9 @@ class AdminAuthenticated
     public function handle($request, Closure $next)
     {
         if (Auth::user() &&  Auth::guard('admin')->guest()) {
-            return $next($request);
+            return redirect('admin/login');
         }
 
-        return redirect('admin/login');
+        return $next($request);
     }
 }

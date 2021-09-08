@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Input;
 use Session;
 use Exception;
 
@@ -29,7 +31,7 @@ class AdminAuthController extends Controller
     public function loginCheck(LoginRequest $request)
     {
         if ($this->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-            return view('admin.dashboard');
+            return view('admin.dashboard')->with('successMessage', 'You have successfully logged in.');
         } else {
             return back()->with('error', 'your username and password are wrong.');
         }

@@ -13,32 +13,17 @@
     <title>Admin Login</title>
     <!-- Custom CSS -->
     <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body>
     <div class="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
         <div class="preloader">
             <div class="lds-ripple">
                 <div class="lds-pos"></div>
                 <div class="lds-pos"></div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
+
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center"
             style="background:url(../../assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box">
@@ -55,8 +40,7 @@
                                     <div class="alert alert-danger">{{ session('error') }}</div>
                                 @endif
                             </div>
-                            <form class="form-horizontal m-t-20" id="loginform" action="{{ route('login.check') }}"
-                                method="POST">
+                            <form class="form-horizontal m-t-20" action="{{ route('login.check') }}" method="POST">
                                 @csrf
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -64,8 +48,7 @@
                                                 class="ti-user"></i></span>
                                     </div>
                                     <input type="email" name="email" class="form-control form-control-lg"
-                                        placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"
-                                        autofocus>
+                                        placeholder="Email" autofocus>
                                     @if ($errors->has('email'))
                                         <span class="text-danger">{{ $errors->first('email') }}</span>
                                     @endif
@@ -76,7 +59,7 @@
                                                 class="ti-pencil"></i></span>
                                     </div>
                                     <input type="password" name="password" class="form-control form-control-lg"
-                                        placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                                        placeholder="Password">
                                     @if ($errors->has('password'))
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
                                     @endif
@@ -134,38 +117,17 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
+
     </div>
-    <!-- ============================================================== -->
-    <!-- All Required js -->
-    <!-- ============================================================== -->
+
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
     <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugin js -->
-    <!-- ============================================================== -->
+
     <script>
         $('[data-toggle="tooltip"]').tooltip();
         $(".preloader").fadeOut();
-        // ==============================================================
-        // Login and Recover Password
-        // ==============================================================
+
         $('#to-recover').on("click", function() {
             $("#loginform").slideUp();
             $("#recoverform").fadeIn();

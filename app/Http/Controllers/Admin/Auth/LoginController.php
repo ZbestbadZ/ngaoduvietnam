@@ -7,6 +7,7 @@ use App\Http\Requests\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Request;
 
 class LoginController extends Controller
 {
@@ -52,20 +53,17 @@ class LoginController extends Controller
 
     public function loginCheck(LoginRequest $request)
     {
-        if (Auth::guard('admin')->user()) {
-            if (Auth::attempt($request->only('email', 'password'), $request->has('remember'))) {
-                return view('admin.dashboard')->with('successMessage', 'You have successfully logged in.');
-            }
-
-            return back()->with('error', 'your username and password are wrong.');
+        if (Auth::guard('admin')->attempt($request->only('email', 'password'), $request->has('remember'))) {
+            return redirect()->route('dashboard')->with('success', 'You have successfully logged in!');
         }
+        return back()->with('error', 'The email and password do not exist in the system');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        if (Auth::guard('admin')->user()) {
-            Auth::logout();
-        }
+        $request->session()->flush();
+        Auth::guard('admin')->logout();
+
         return redirect()->route('adminLogin');
     }
 }

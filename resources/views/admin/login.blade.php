@@ -35,12 +35,15 @@
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <div id="err">
-                                @if (session()->has('error'))
-                                    <div class="alert alert-danger">{{ session('error') }}</div>
-                                @endif
-                            </div>
-                            <form class="form-horizontal m-t-20" action="{{ route('login.check') }}" method="POST">
+
+                            @if (session('error'))
+                                <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
+                            @if (session('success'))
+                                <div class="alert alert-danger">{{ session('success') }}</div>
+                            @endif
+
+                            <form action="{{ route('login.check') }}" method="POST">
                                 @csrf
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -49,9 +52,9 @@
                                     </div>
                                     <input type="email" name="email" class="form-control form-control-lg"
                                         placeholder="Email" autofocus>
-                                    @if ($errors->has('email'))
-                                        <span class="text-danger">{{ $errors->first('email') }}</span>
-                                    @endif
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -60,9 +63,9 @@
                                     </div>
                                     <input type="password" name="password" class="form-control form-control-lg"
                                         placeholder="Password"><br>
-                                    @if ($errors->has('password'))
-                                        <span class="text-danger">{{ $errors->first('password') }}</span>
-                                    @endif
+                                    @error('password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-12">

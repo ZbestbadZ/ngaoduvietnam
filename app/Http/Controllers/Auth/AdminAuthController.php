@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
-use App\Models\Admin;
-use Illuminate\Support\Facades\Input;
+use App\Http\Requests\RegisterRequest;
 use Session;
 use Exception;
 
@@ -21,7 +20,7 @@ class AdminAuthController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest:admin', ['except' => 'logout']);
     }
 
     public function getLogin()
@@ -33,11 +32,9 @@ class AdminAuthController extends Controller
     {
         if (Auth::guard('admin')->user()) {
             if (Auth::attempt($request->only('email', 'password'), $request->has('remember'))) {
-                dd($request->all());
-
                 return view('admin.dashboard')->with('successMessage', 'You have successfully logged in.');
             }
-            dd($request->all());
+
             return back()->with('error', 'your username and password are wrong.');
         }
     }

@@ -22,9 +22,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
 Route::post('/admin/login', [AdminAuthController::class, 'loginCheck'])->name('login.check');
 Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('adminLogout');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 

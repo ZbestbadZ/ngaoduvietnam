@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+//Route::post('/admin/login', [AdminAuthController::class, 'loginCheck'])->name('login.check');
+//Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('adminLogout');
+
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+});

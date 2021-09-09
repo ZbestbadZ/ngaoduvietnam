@@ -17,9 +17,9 @@ class AdminAuthenticated
      * @return mixed
      */
 
-    public function handle($request, Closure $next, $guard = 'admin')
+    public function handle($request, Closure $next)
     {
-        if (!Auth::guard($guard)->check()) {
+        if (!Auth::guard('admin')->check()) {
             return redirect('/admin/login');
         }
 

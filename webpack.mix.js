@@ -24,3 +24,7 @@ mix.js('resources/js/app.js', 'public/js')
 mix.sass('resources/sass/custom_scss/intro/intro.scss', 'public/css', [
     //
 ]);
+
+mix.sass('resources/sass/custom_scss/tour/tour.scss', 'public/css', [
+    //
+]);

@@ -173,3 +173,24 @@ footer .container {
   font-weight: 400;
   font-size: 14px;
 }
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  height: 100%;
+  background-color: #ffffff;
+  height: calc(100% - 60px);
+  margin-left: 170px;
+  margin-top: 2px;
+  border: 1px solid;
+  margin-bottom: 5px;
+}

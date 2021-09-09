@@ -1,0 +1,121 @@
+@import '../../font';
+@import '../../mixin';
+
+.intro-container{
+    margin-top: 12.5em;
+    margin-bottom: 10em;
+}
+
+.intro-image-container{
+    height: 38em;
+    position: relative;
+}
+
+.overlay-img{
+    position: absolute;
+    bottom:0%;
+    left:35%;
+}
+
+.intro-title{
+    @include font_DMSans(500,2.5em);
+}
+
+.intro-body{
+    @include font_DMSans(400,1em);
+}
+
+
+//Destination section
+.dest-container{
+    margin-bottom:9.375em;
+}
+
+.dest-title{
+    @include font_DMSans(400,2.5em);
+}
+
+.btn-viewall{
+    border:none;
+    padding:0.5em;
+}
+
+.dest-item-name{
+    @include font_DMSans(500,1.25em);
+    margin-bottom: 0.125em;
+    margin-top: 0.75em;
+}
+
+.dest-item-exp{
+    @include font_DMSans(400,0.875em);
+    color: rgba(99, 101, 103, 1);
+}
+
+//Tour
+.tour-item-img-container{
+    position: relative;
+}
+
+.highlight{
+    position: absolute;
+    top: -1%;
+    right: 5%;
+}
+
+.tour-item-rate{
+    padding:0.5em;
+    background-color: #FF7B42;
+    color: white;
+    width: 20%;
+    position: absolute;
+    left: 0%;
+    bottom: 10%;
+}
+
+.tour-item p{
+    margin-bottom: 0;
+}
+
+.tour-title{
+    @include font_DMSans(500,1.125em);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em !important;
+}
+
+.tour-desc{
+    margin-left: 0.8rem;
+    margin-bottom: 0;
+    @include font_DMSans(400,0.875em);
+    color: rgba(99, 101, 103, 1);
+}
+
+.tour-price{
+    @include font_DMSans(500,1.25em);
+    margin-left: 0.5em;
+}
+
+//email
+.email-container{
+    margin-bottom: 9em;
+}
+
+.email-title{
+    @include font_DMSans(500,2.5em);
+}
+
+.email-container .input-group-text{
+    background-color: unset !important;
+}
+
+.email-input{
+    border-radius: unset;
+    border: 1px solid #636567;
+}
+
+.email-btn{
+    background-color:rgba(28, 28, 30, 1);
+    color:white;
+    border:none;
+    padding: 1em 2em;
+    margin-left: 1.3em;
+}

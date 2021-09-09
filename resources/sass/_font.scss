@@ -1,0 +1,12 @@
+//DM Sans weight:700 Bold
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+//DM Sans weight:500
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
+//DM Sans weight:400
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+@mixin font_DMSans($weight,$size) {
+    font-family: DM Sans;
+    font-weight: $weight;
+    font-size: $size;
+}

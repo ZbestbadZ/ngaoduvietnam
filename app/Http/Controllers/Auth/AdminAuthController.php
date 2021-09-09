@@ -17,6 +17,7 @@ class AdminAuthController extends Controller
     use AuthenticatesUsers;
 
     protected $redirectTo = '/admin/login';
+    protected $guard = 'admin';
 
     public function __construct()
     {
@@ -30,16 +31,20 @@ class AdminAuthController extends Controller
 
     public function loginCheck(LoginRequest $request)
     {
-        if ($this->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-            return view('admin.dashboard')->with('successMessage', 'You have successfully logged in.');
-        } else {
+        if (Auth::guard('admin')->user()) {
+            if (Auth::attempt($request->only('email', 'password'), $request->has('remember'))) {
+                dd($request->all());
+
+                return view('admin.dashboard')->with('successMessage', 'You have successfully logged in.');
+            }
+            dd($request->all());
             return back()->with('error', 'your username and password are wrong.');
         }
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
-        Auth::logout();
+        Auth::guard('admin')->user()->logout();
         return redirect()->route('adminLogin');
     }
 }

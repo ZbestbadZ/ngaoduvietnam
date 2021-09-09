@@ -59,7 +59,7 @@
                                                 class="ti-pencil"></i></span>
                                     </div>
                                     <input type="password" name="password" class="form-control form-control-lg"
-                                        placeholder="Password">
+                                        placeholder="Password"><br>
                                     @if ($errors->has('password'))
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
                                     @endif
@@ -67,7 +67,8 @@
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <input type="checkbox" name="remember" class="custom-control-input"
+                                                id="customCheck1">
                                             <label class="custom-control-label" for="customCheck1">Remember me</label>
                                             <a href="#" id="to-recover" class="text-dark float-right"><i
                                                     class="fa fa-lock m-r-5"></i> Forgot

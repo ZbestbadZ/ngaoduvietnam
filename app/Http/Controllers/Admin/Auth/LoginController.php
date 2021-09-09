@@ -7,7 +7,7 @@ use App\Http\Requests\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-use Request;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {

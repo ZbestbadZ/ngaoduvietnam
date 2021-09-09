@@ -45,22 +45,14 @@
 
                             <form action="{{ route('login.check') }}" method="POST">
                                 @csrf
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i
-                                                class="ti-user"></i></span>
-                                    </div>
+                                <div class="form-group mb-3">
                                     <input type="email" name="email" class="form-control form-control-lg"
                                         placeholder="Email" autofocus>
                                     @error('email')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon2"><i
-                                                class="ti-pencil"></i></span>
-                                    </div>
+                                <div class="form-group mb-3">
                                     <input type="password" name="password" class="form-control form-control-lg"
                                         placeholder="Password"><br>
                                     @error('password')

@@ -14,8 +14,13 @@
             {{ session('thongbao') }}
         </div>
     @endif
-    Welcome,  <br>
+    Welcome,  {{ auth()->guard('admin')->user()->name }}<br>
     In the Admin Dashboard.....
+    <hr>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+        <button class="btn btn-primary" type="submit">Logout</button>
+    </form>
 </body>
 
 </html>

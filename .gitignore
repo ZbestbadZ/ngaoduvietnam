@@ -13,8 +13,5 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-public
-composer.lock
-composer.json
-package-lock.json
-.gitignore
+public/js
+public/css

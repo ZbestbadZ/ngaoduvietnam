@@ -10,6 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Admin Login</title>
     <!-- Custom CSS -->
     <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
@@ -25,11 +26,11 @@
         </div>
 
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center"
-            style="background:url(../../assets/images/big/auth-bg.jpg) no-repeat center center;">
+            style="background:url(../../assets/images/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
-                        <span class="db"><img src="../../assets/images/logo-icon.png" alt="logo" /></span>
+                        <span class="db"><img src="{{ asset('assets/images/logo-icon.png') }}" alt="logo" /></span>
                         <h5 class="font-medium m-b-20">Sign In to Admin</h5>
                     </div>
                     <!-- Form -->
@@ -83,7 +84,8 @@
                 </div>
                 <div id="recoverform">
                     <div class="logo">
-                        <span class="db"><img src="../../assets/images/logo-icon.png" alt="logo" /></span>
+                        <span class="db"><img src="{{ asset('assets/images/logo-icon.png') }}"
+                                alt="logo" /></span>
                         <h5 class="font-medium m-b-20">Recover Password</h5>
                         <span>Enter your Email and instructions will be sent to you!</span>
                     </div>
@@ -112,9 +114,9 @@
 
     </div>
 
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }} "></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
     <script>
         $('[data-toggle="tooltip"]').tooltip();

@@ -10,8 +10,6 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Admin Login</title>
     <!-- Custom CSS -->
@@ -28,7 +26,7 @@
         </div>
 
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center"
-            style="background:url(../../assets/images/big/auth-bg.jpg) no-repeat center center;">
+            style="background:url(../../assets/images/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">

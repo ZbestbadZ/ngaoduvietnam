@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\TourController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('adminLogout');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+});
+
+Route::group(['prefix' => '/admin'], function () {
+    Route::get('/create_tour', [TourController::class, 'create'])->name('tour.create');
+    Route::post('/', [TourController::class, 'store'])->name('tour.store');
 });

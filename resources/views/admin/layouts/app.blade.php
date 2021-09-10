@@ -20,7 +20,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    @yield('')
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -30,10 +29,14 @@
 <body>
     <div id="app">
         <div class="topbar">
-
         </div>
         <main>
-            @yield('content')
+            <div class="admin-sidebar">
+                @include('admin.layouts.sidebar')
+            </div>
+            <div class="main-container">
+                @yield('content')
+            </div>
         </main>
     </div>
 

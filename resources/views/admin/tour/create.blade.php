@@ -69,12 +69,9 @@
                             @enderror
                         </div>
 
-                        <div class="row form-group">
+                        <div class="form-group">
                             <label>Price*: </label>
                             <input class="form-control" type="text" name="price" value="">
-                            <select class="form-control" name="">
-                                <option value=""></option>
-                            </select>
                             @error('price')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror

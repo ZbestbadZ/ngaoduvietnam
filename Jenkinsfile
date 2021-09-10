@@ -76,6 +76,8 @@ pipeline {
                 sh 'composer install --no-suggest --optimize-autoloader --no-ansi --no-interaction --ignore-platform-reqs'
                 sh 'composer dump-autoload'
                 sh 'php artisan key:generate --force'
+                sh 'npm install'
+                sh 'npm run dev'
             }
         }
         stage('PHPUnit Tests') {

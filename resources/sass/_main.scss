@@ -1,18 +1,24 @@
 main {
-    height: 100%;
+    width: 100%;
     background-color: #ffffff;
     height: calc(100% - 60px);
 }
 
 .admin-sidebar {
     width: 20%;
-    float: left;
+    position: absolute;
+    padding: 2px;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    margin-top: 5px;
 }
 
 .main-container {
     width: 80%;
-    float: right;
-    margin-top: 2px;
+    position: absolute;
+    padding: 5px;
+    right: 0;
     border: 1px solid;
-    margin-bottom: 5px;
+    margin-top: 5px;
 }

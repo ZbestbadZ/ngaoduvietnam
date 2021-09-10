@@ -69,9 +69,18 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
+                        <div class="row form-group">
                             <label>Price*: </label>
-                            <input class="form-control" type="text" name="price" value="">
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" name="price" value="">
+                            </div>
+                            <div class="col-lg-3">
+                                {{-- <input class="form-control" type="text" name="price" value=""> --}}
+                                <select name="" id="" class="form-control">
+                                    <option value="VND">VND</option>
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
                             @error('price')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror

@@ -45,8 +45,10 @@
 
                         <div class="form-group">
                             <label>Image*: </label>
-                            <input class="form-control" type="file" value="">
-
+                            <input class="form-control" name="image" type="file" value="">
+                            @error('image')
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -77,8 +79,8 @@
                             <div class="col-lg-3">
                                 {{-- <input class="form-control" type="text" name="price" value=""> --}}
                                 <select name="" id="" class="form-control">
-                                    <option value="VND">VND</option>
-                                    <option value="USD">USD</option>
+                                    <option value="VND">USD</option>
+                                    <option value="USD">VND</option>
                                 </select>
                             </div>
                             @error('price')
@@ -88,12 +90,12 @@
 
                         <div class="form-group">
                             <label>Image SEO: </label>
-                            <input class="form-control" type="file" value="">
-
+                            <input class="form-control" name="image_seo" ype="file" value="">
+                            @error('image_seo')
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="form-group">

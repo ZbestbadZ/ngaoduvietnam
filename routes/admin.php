@@ -28,7 +28,5 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 });
 
-Route::group(['prefix' => '/admin'], function () {
-    Route::get('/create_tour', [TourController::class, 'create'])->name('tour.create');
-    Route::post('/', [TourController::class, 'store'])->name('tour.store');
-});
+Route::get('/create_tour', [TourController::class, 'create'])->name('tour.create');
+Route::post('/', [TourController::class, 'store'])->name('tour.store');

@@ -14,7 +14,7 @@
             <div class="home-tour"><a href="#">Home</a> / <a href="#">Tour</a> / Create</div>
         </div>
         <div class="create-form-tour">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('tour.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Name*: </label>
@@ -45,8 +45,10 @@
 
                         <div class="form-group">
                             <label>Image*: </label>
-                            <input class="form-control" type="file" value="">
-
+                            <input class="form-control" name="image" type="file" value="">
+                            @error('image')
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -77,8 +79,8 @@
                             <div class="col-lg-3">
                                 {{-- <input class="form-control" type="text" name="price" value=""> --}}
                                 <select name="" id="" class="form-control">
-                                    <option value="VND">VND</option>
-                                    <option value="USD">USD</option>
+                                    <option value="VND">USD</option>
+                                    <option value="USD">VND</option>
                                 </select>
                             </div>
                             @error('price')
@@ -88,8 +90,10 @@
 
                         <div class="form-group">
                             <label>Image SEO: </label>
-                            <input class="form-control" type="file" value="">
-
+                            <input class="form-control" name="image_seo" type="file" value="">
+                            @error('image_seo')
+                                <div class="text-danger"><strong>{{ $message }}</strong></div>
+                            @enderror
                         </div>
                     </div>
 
@@ -122,7 +126,7 @@
 
                 <div class="create-tour-submit">
                     <button type="button" class="btn btn-light border">Cancel</button>
-                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                 </div>
             </form>
         </div>

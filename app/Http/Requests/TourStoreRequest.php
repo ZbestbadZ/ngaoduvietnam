@@ -13,7 +13,7 @@ class TourStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class TourStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'        => 'required|max:255',
+            'slug'        => 'required|max:255',
+            'duration'    => 'required',
+            'category'    => 'required',
+            'price'       => 'required|integer|min:0',
+            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image_seo'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'address'     => 'required|max:255',
+            'destination' => 'required',
+            'overview'    => 'required'
         ];
     }
 }

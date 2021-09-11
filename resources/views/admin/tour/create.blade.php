@@ -77,7 +77,7 @@
                                 <input class="form-control" type="text" name="price" value="">
                             </div>
                             <div class="col-lg-3">
-                                {{-- <input class="form-control" type="text" name="price" value=""> --}}
+                                <input class="form-control" type="text" name="price" value="">
                                 <select name="" id="" class="form-control">
                                     <option value="VND">USD</option>
                                     <option value="USD">VND</option>
@@ -96,8 +96,6 @@
                             @enderror
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="form-group">

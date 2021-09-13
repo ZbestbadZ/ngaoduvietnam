@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Create Tour</title>
+    <title>Admin</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -46,6 +46,7 @@
             $('.ckeditor').ckeditor();
         });
     </script>
+    @yield('scripts')
 
 </body>
 

@@ -28,3 +28,7 @@ mix.sass('resources/sass/custom_scss/intro/intro.scss', 'public/css', [
 mix.sass('resources/sass/custom_scss/tour/tour.scss', 'public/css', [
     //
 ]);
+
+mix.sass('resources/sass/custom_scss/category/category.scss', 'public/css', [
+    //
+]);

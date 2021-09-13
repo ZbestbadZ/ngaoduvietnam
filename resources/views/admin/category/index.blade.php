@@ -34,9 +34,10 @@
                                 aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="createModelCategory">Create New Category Tour</h4>
                     </div>
-                    {{-- <form action="" method="POST"> --}}
                         <div class="modal-body">
-                            {{-- @csrf --}}
+                    <form action="" method="POST">
+
+                            @csrf
                             <div class="form-group">
                                 <label>Name*: </label>
                                 <input class="form-control" type="text" name="name">
@@ -56,7 +57,7 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-success">Save</button>
                         </div>
-                    {{-- </form> --}}
+                    </form>
 
                 </div>
             </div>

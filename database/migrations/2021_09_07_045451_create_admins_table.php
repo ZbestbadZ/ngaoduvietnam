@@ -22,6 +22,7 @@ class CreateAdminsTable extends Migration
             $table->string('bank_account')->nullable();
             $table->string('password');
             $table->string('address')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

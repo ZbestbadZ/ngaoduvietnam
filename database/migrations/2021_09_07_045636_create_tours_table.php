@@ -18,12 +18,12 @@ class CreateToursTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->integer('duration');
-            $table->string('image_seo');
+            $table->string('image_seo')->nullable();
             $table->double('price');
             $table->integer('destination_id');
             $table->string('address');
             $table->string('overview');
-            $table->boolean('active');
+            $table->boolean('active')->nullable();
 
             $table->timestamps();
         });

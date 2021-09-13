@@ -21,12 +21,12 @@ use App\Http\Controllers\Admin\TourController;
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('adminLogin');
 Route::post('/login', [LoginController::class, 'loginCheck'])->name('login.check');
-Route::get('/logout', [LoginController::class, 'logout'])->name('adminLogout');
-
+Route::post('/logout', [LoginController::class, 'logout'])->name('adminLogout');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 });
 
-Route::get('/create_tour', [TourController::class, 'create'])->name('tour.create');
-Route::post('/', [TourController::class, 'store'])->name('tour.store');
+Route::get('tours/getDataTour', [TourController::class, 'getDataTour'])->name('tours.getDataTour');
+Route::resource('tours', TourController::class);
+Route::resource('categories', CategoryController::class);

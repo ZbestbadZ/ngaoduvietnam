@@ -14,11 +14,11 @@
             <div class="home-tour"><a href="#">Home</a> / <a href="#">Tour</a> / Create</div>
         </div>
         <div class="create-form-tour">
-            <form action="{{ route('tour.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('tours.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Name*: </label>
-                    <input class="form-control" type="text" name="name" value="">
+                    <input class="form-control" type="text" name="name">
                     @error('name')
                         <div class="text-danger"><strong>{{ $message }}</strong></div>
                     @enderror
@@ -28,16 +28,17 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label>Slug*: </label>
-                            <input class="form-control" type="text" name="slug" value="">
+                            <input class="form-control" type="text" name="slug">
                             @error('slug')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label>Category*: </label>
-                            <select class="form-control" name="category">
+                            <input class="form-control" type="text" name="category">
+                            {{-- <select class="form-control" name="category">
                                 <option value=""></option>
-                            </select>
+                            </select> --}}
                             @error('category')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
@@ -45,7 +46,8 @@
 
                         <div class="form-group">
                             <label>Image*: </label>
-                            <input class="form-control" name="image" type="file" value="">
+                            <input type="file" class="form-control" name="image[]" id="image" multiple>
+                            {{-- <img src="{{asset('tours-images')}}/{{$tour->image }}" id="previewImg" /> --}}
                             @error('image')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
@@ -53,9 +55,10 @@
 
                         <div class="form-group">
                             <label>Destination*: </label>
-                            <select class="form-control" name="destination">
+                            <input type="text" class="form-control" name="destination">
+                            {{-- <select class="form-control" name="destination">
                                 <option value=""></option>
-                            </select>
+                            </select> --}}
                             @error('destination')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
@@ -65,7 +68,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label>Duration*: </label>
-                            <input class="form-control" type="number" name="duration" value="">
+                            <input class="form-control" type="number" name="duration">
                             @error('duration')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
@@ -74,13 +77,12 @@
                         <div class="row form-group">
                             <label>Price*: </label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="text" name="price" value="">
+                                <input class="form-control" type="text" name="price">
                             </div>
                             <div class="col-lg-3">
-                                <input class="form-control" type="text" name="price" value="">
                                 <select name="" id="" class="form-control">
-                                    <option value="VND">USD</option>
-                                    <option value="USD">VND</option>
+                                    <option value="USD">USD</option>
+                                    <option value="VND">VND</option>
                                 </select>
                             </div>
                             @error('price')
@@ -90,7 +92,7 @@
 
                         <div class="form-group">
                             <label>Image SEO: </label>
-                            <input class="form-control" name="image_seo" type="file" value="">
+                            <input type="file" class="form-control" name="image_seo[]" id="image_seo" multiple>
                             @error('image_seo')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
@@ -100,7 +102,7 @@
 
                 <div class="form-group">
                     <label>Address*: </label>
-                    <input class="form-control" type="text" name="address" value="">
+                    <input class="form-control" type="text" name="address">
                     @error('address')
                         <div class="text-danger"><strong>{{ $message }}</strong></div>
                     @enderror

@@ -29,8 +29,8 @@ class TourStoreRequest extends FormRequest
             'duration'    => 'required',
             'category'    => 'required',
             'price'       => 'required|integer|min:0',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'image_seo'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'image.*'       => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image_seo.*'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'address'     => 'required|max:255',
             'destination' => 'required',
             'overview'    => 'required'

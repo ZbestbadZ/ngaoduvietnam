@@ -26,8 +26,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('adminLogout');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('tours/getDataTour', [TourController::class, 'getDataTour'])->name('tours.getDataTour');
+    Route::resource('tours', TourController::class);
+    Route::resource('categories', CategoryController::class);
 });
-
-Route::get('tours/getDataTour', [TourController::class, 'getDataTour'])->name('tours.getDataTour');
-Route::resource('tours', TourController::class);
-Route::resource('categories', CategoryController::class);

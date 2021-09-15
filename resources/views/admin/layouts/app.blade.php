@@ -28,8 +28,7 @@
 
 <body>
     <div id="app">
-        <div class="topbar">
-        </div>
+        @include('admin.layouts.topbar')
         <main>
             <div class="admin-sidebar">
                 @include('admin.layouts.sidebar')

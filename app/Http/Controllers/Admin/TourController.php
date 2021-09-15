@@ -11,10 +11,10 @@ use Yajra\DataTables\DataTables;
 
 class TourController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('admin');
-    // }
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
 
     public function getDataTour(Request $request)
     {

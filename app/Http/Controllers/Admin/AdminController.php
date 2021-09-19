@@ -16,4 +16,8 @@ class AdminController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function editAccountForm() {
+        return view('admin.auth.account.edit');
+    }
 }

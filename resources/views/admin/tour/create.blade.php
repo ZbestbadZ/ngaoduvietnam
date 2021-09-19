@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('custome_style')
-    <link href="{{ asset('css/tour.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin-tour.css') }}" rel="stylesheet">
 
 @endsection
 
@@ -11,7 +11,7 @@
             <div class="title">
                 <h5>Create Tour</h5>
             </div>
-            <div class="home-tour"><a href="#">Home</a> / <a href="#">Tour</a> / Create</div>
+            <div class="home-tour"><a href="#">Home</a> <i class="fas fa-chevron-right"></i><a href="#">Tour</a> <i class="fas fa-chevron-right"></i> Create</div>
         </div>
         <div class="create-form-tour">
             <form action="{{ route('tours.store') }}" method="POST" enctype="multipart/form-data">
@@ -47,7 +47,6 @@
                         <div class="form-group">
                             <label>Image*: </label>
                             <input type="file" class="form-control" name="image[]" id="image" multiple>
-                            {{-- <img src="{{asset('tours-images')}}/{{$tour->image }}" id="previewImg" /> --}}
                             @error('image')
                                 <div class="text-danger"><strong>{{ $message }}</strong></div>
                             @enderror
@@ -119,7 +118,7 @@
                 <div class="d-flex align-items-center">
                     <label>Active</label>
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>
                 </div>

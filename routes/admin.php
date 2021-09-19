@@ -25,6 +25,9 @@ Route::post('/login', [LoginController::class, 'loginCheck'])->name('login.check
 Route::post('/logout', [LoginController::class, 'logout'])->name('adminLogout');
 
 Route::group(['middleware' => 'admin'], function () {
+    Route::get('/edit-account', [AdminController::class, 'editAccountForm'])->name('admin.editAccount');
+    Route::post('/edit-account', [AdminController::class, 'changeAccount'])->name('admmin.changeAccount');
+
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('tours/getDataTour', [TourController::class, 'getDataTour'])->name('tours.getDataTour');
     Route::resource('tours', TourController::class);

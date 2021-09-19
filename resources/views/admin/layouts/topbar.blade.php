@@ -22,7 +22,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a href="#" class="dropdown-item"><i class="fas fa-user-cog"></i>{{ __('Account Setting') }}</a>
+                    <a href="{{ route('admin.editAccount') }}" class="dropdown-item"><i class="fas fa-user-cog"></i>{{ __('Account Setting') }}</a>
                     <a class="dropdown-item" href="{{ route('adminLogout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>

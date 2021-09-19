@@ -5,7 +5,7 @@
 @endsection
 
 @section('custome_style')
-    <link href="{{ asset('css/cactegory.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin-cactegory.css') }}" rel="stylesheet">
 
 @endsection
 

@@ -11,6 +11,13 @@
     margin-bottom: 2px;
 }
 
+.home-tour {
+    i {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}
+
 form {
     margin-left: 20px;
     margin-top: 10px;
@@ -23,6 +30,12 @@ form {
     width: 60px;
     height: 34px;
     margin-left: 10px;
+}
+
+.switch {
+    input {
+        display: none;
+    }
 }
 
 .slider {
@@ -49,12 +62,6 @@ form {
     transition: .4s;
 }
 
-.switch {
-    input {
-        display: none;
-    }
-}
-
 input:checked+.slider {
     background-color: #2196F3;
 }
@@ -70,16 +77,12 @@ input:checked+.slider:before {
 }
 
 /* Rounded sliders */
-.slider {
-    .round {
-        border-radius: 34px;
-    }
+.round {
+    border-radius: 34px;
 }
 
-.slider {
-    .round:before {
-        border-radius: 50%;
-    }
+.round:before {
+    border-radius: 50%;
 }
 
 .create-tour-submit {

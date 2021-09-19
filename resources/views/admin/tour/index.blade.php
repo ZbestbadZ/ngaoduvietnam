@@ -5,7 +5,7 @@
 @endsection
 
 @section('custome_style')
-    <link href="{{ asset('css/tour.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin-tour.css') }}" rel="stylesheet">
 
 @endsection
 

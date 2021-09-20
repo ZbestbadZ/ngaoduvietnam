@@ -11,7 +11,7 @@
             <div class="title">
                 <h5>Admin Account</h5>
             </div>
-            <div class="home-account"><a href="#">Home</a> <i class="fas fa-chevron-right"></i>Account Setting</div>
+            <div class="home-account"><a href="#">Home</a> <em class="fas fa-chevron-right"></em> Account Setting</div>
         </div>
         <div class="edit-form-account">
 

@@ -11,7 +11,7 @@
             <div class="title">
                 <h5>Create Tour</h5>
             </div>
-            <div class="home-tour"><a href="#">Home</a> <i class="fas fa-chevron-right"></i><a href="#">Tour</a> <i class="fas fa-chevron-right"></i> Create</div>
+            <div class="home-tour"><a href="#">Home</a> <em class="fas fa-chevron-right"></em><a href="#">Tour</a> <em class="fas fa-chevron-right"></em> Create</div>
         </div>
         <div class="create-form-tour">
             <form action="{{ route('tours.store') }}" method="POST" enctype="multipart/form-data">

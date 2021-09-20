@@ -16,16 +16,16 @@
         @guest
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class="fa fa-user"></i>
+                    <em class="fa fa-user"></em>
 
                     {{ auth()->guard('admin')->user()->name }}
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a href="{{ route('admin.editAccount') }}" class="dropdown-item"><i class="fas fa-user-cog"></i>{{ __('Account Setting') }}</a>
+                    <a href="{{ route('admin.editAccount') }}" class="dropdown-item"><em class="fas fa-user-cog"></em>{{ __('Account Setting') }}</a>
                     <a class="dropdown-item" href="{{ route('adminLogout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i>
+                        <em class="fas fa-sign-out-alt"></em>
                         {{ __('Logout') }}
                     </a>
                     <form id="logout-form" action="{{ route('adminLogout') }}" method="POST" class="d-none">
